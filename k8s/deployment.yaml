@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proof-manifest
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: proof-manifest}
+  template:
+    metadata:
+      labels: {app: proof-manifest}
+    spec:
+      containers:
+        - name: web
+          image: IMAGE_PLACEHOLDER
+          ports: [{containerPort: 8080}]
